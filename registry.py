@@ -57,7 +57,9 @@ def get_hashes(path):
             count += 1
     return filehash.hexdigest(), chunks
 
-def get_file(share, fpath):
+def get_file(share_id, fpath):
+    share = get_share(share_id)
+    state.add_share(share, fpath)
     create_sparse_file(share["size"], fpath)
     chunks = share["chunks"]
     shuffle(chunks)
@@ -67,6 +69,11 @@ def get_file(share, fpath):
             chunk_data = get_chunk_from_peers(share["id"], chunk["part"])
             put_chunk(f, share["id"], chunk, chunk_data)
             announce_chunk_download(share["id"], chunk["part"])
+
+def get_share(share_id):
+    # XXX Make a request to registry
+    with open('/Users/pdvyas/shares.json', 'r') as f:
+        return json.load(f)[0]
 
 def get_chunk_from_peers(share_id, chunk_id):
     peer = random.choice(get_peers_for_chunk(share_id, chunk_id))
@@ -105,12 +112,3 @@ def _get_chunk(share, chunk):
 def put_chunk(f, share_id, chunk, chunk_data):
     f.seek(chunk["start"])
     f.write(base64.b64decode(chunk_data))
-
-if __name__ == "__main__":
-    share = get_p2pshare_metadata("pdvyas.pdf")
-    pprint(share)
-    # shares = {
-    #     share["id"]: share
-    # }
-    # get_file(shares[1], "tfile.pdf")
-
