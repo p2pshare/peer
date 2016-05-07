@@ -1,8 +1,11 @@
 import os
 import json
+import threading
 
 shares = {}
 chunks = set()
+
+sync_mutex = threading.Lock()
 
 def get_downloaded_shares():
     try:
@@ -35,6 +38,7 @@ def add_share(share, fpath):
     shares[share['id']] = share
 
 def sync_to_disk():
-    # XXX Mutex
+    sync_mutex.acquire()
     with open('shares.json', 'wb') as f:
-        return json.dump(shares.values(), f, indent=4)
+        json.dump(shares.values(), f, indent=4)
+    sync_mutex.release()

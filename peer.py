@@ -1,10 +1,14 @@
 import socket
+import time
 import click
 import threading
 import thread
+import tracker
 import state
 import registry
 import json
+import utils
+import cmd
 
 
 def handle(sock, addr):
@@ -16,6 +20,7 @@ def handle(sock, addr):
         sock.send(resp)
     except Exception, e:
         msg = "ERROR"
+        print e
         sock.send(msg)
     finally:
         sock.close()
@@ -55,17 +60,57 @@ class P2PShareServer(object):
         finally:
             self.sock.close()
 
+def keepalive_thread():
+    print 'inrun'
+    while True:
+        time.sleep(20)
+        print 'keepalive'
+        tracker.send_keepalive()
+        tracker.announce_all_chunks()
+
+def state_sync_thread():
+    while True:
+        time.sleep(10)
+        state.sync_to_disk()
+
+def cli():
+    class Cmd(cmd.Cmd):
+        def do_get_share(self, args):
+            share_id, tpath = args.split()
+            if share_id and tpath:
+                registry.get_file(int(share_id), tpath)
+
+        def do_EOF(self, line):
+            "Exit"
+            return True
+
+    print
+    Cmd().cmdloop()
+
 @click.command()
 @click.argument('datadir')
+@click.argument('hostname')
 @click.argument('port', type=int)
-def peer(datadir, port):
+def peer(datadir, hostname, port):
+    utils.config['port'] = port
+    utils.config['hostname'] = hostname
+    utils.config['datadir'] = datadir
     state.setup(datadir)
-    s1 = P2PShareServer("localhost", port)
-    t1 = threading.Thread(target=s1.run)
-    t1.run()
-    t1.daemon = True
+    tracker.send_keepalive()
+    tracker.announce_all_chunks()
+    s = P2PShareServer("localhost", port)
+    threads = [
+        threading.Thread(target=s.run),
+        threading.Thread(target=keepalive_thread),
+        threading.Thread(target=state_sync_thread),
+        threading.Thread(target=cli),
+    ]
+    for t in threads:
+        t.daemon = True
+        t.start()
     while True:
-        t1.join(600)
+        for t in threads:
+            t.join(600)
 
 if __name__ == "__main__":
     peer()

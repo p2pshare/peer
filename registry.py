@@ -3,6 +3,7 @@ from pprint import pprint
 import getpass
 import os
 import random
+import threading
 import base64
 import state
 import socket
@@ -44,7 +45,7 @@ def get_hashes(path):
             chunk = f.read(CHUNK_SIZE)
             if not chunk:
                 break
-            md5 = hashlib.md5(chunk).hexdigest()
+            md5 = get_chunk_md5(chunk)
             filehash.update(chunk)
             size = f.tell() - start
             chunks.append({
@@ -57,18 +58,27 @@ def get_hashes(path):
             count += 1
     return filehash.hexdigest(), chunks
 
+def get_chunk_md5(data):
+    return hashlib.md5(data).hexdigest()
+
+files_mutexes = {}
+
 def get_file(share_id, fpath):
     share = get_share(share_id)
     state.add_share(share, fpath)
     create_sparse_file(share["size"], fpath)
     chunks = share["chunks"]
-    shuffle(chunks)
+    # shuffle(chunks)
     with open(fpath, "wb") as f:
         # XXX Do this in a multithreaded way
+        if f not in files_mutexes:
+            files_mutexes[f] = threading.Lock()
         for chunk in chunks:
             chunk_data = get_chunk_from_peers(share["id"], chunk["part"])
             put_chunk(f, share["id"], chunk, chunk_data)
             announce_chunk_download(share["id"], chunk["part"])
+        state.sync_to_disk()
+        del files_mutexes[f]
 
 def get_share(share_id):
     # XXX Make a request to registry
@@ -102,7 +112,7 @@ def get_chunk(share_id, chunk_id):
     return _get_chunk(share, chunk)
 
 def _get_chunk(share, chunk):
-    print "in _get_chunk", share, chunk
+    print "in _get_chunk", chunk
     with open(share["filename"], 'rb') as f:
         f.seek(chunk["start"])
         chunk_data = f.read(chunk["size"])
@@ -110,5 +120,8 @@ def _get_chunk(share, chunk):
     return base64.b64encode(chunk_data)
 
 def put_chunk(f, share_id, chunk, chunk_data):
-    f.seek(chunk["start"])
-    f.write(base64.b64decode(chunk_data))
+    with files_mutexes[f]:
+        f.seek(chunk["start"])
+        decoded = base64.b64decode(chunk_data)
+        print chunk["part"], chunk["md5"], get_chunk_md5(decoded)
+        f.write(decoded)
