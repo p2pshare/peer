@@ -8,12 +8,15 @@ import base64
 import state
 import socket
 import json
+import Queue
 
 from random import shuffle
 from tracker import get_peers_for_chunk, announce_chunk_download
 from utils import create_sparse_file
 
 CHUNK_SIZE = 512# * 1024 # 512K
+
+fetch_queue = Queue.Queue()
 
 class ChunkNotFound(Exception):
     pass
@@ -74,9 +77,8 @@ def get_file(share_id, fpath):
         if f not in files_mutexes:
             files_mutexes[f] = threading.Lock()
         for chunk in chunks:
-            chunk_data = get_chunk_from_peers(share["id"], chunk["part"])
-            put_chunk(f, share["id"], chunk, chunk_data)
-            announce_chunk_download(share["id"], chunk["part"])
+            fetch_queue.put((f, share, chunk))
+        fetch_queue.join()
         state.sync_to_disk()
         del files_mutexes[f]
 
@@ -87,6 +89,11 @@ def get_share(share_id):
 
 def get_chunk_from_peers(share_id, chunk_id):
     peer = random.choice(get_peers_for_chunk(share_id, chunk_id))
+    if not peer:
+        print 'retrying'
+        peer = random.choice(get_peers_for_chunk(share_id, chunk_id))
+    if not peer:
+        print 'give up'
     return get_chunk_from_peer(peer, share_id, chunk_id)
 
 def get_chunk_from_peer(peer, share_id, chunk_id):
@@ -123,5 +130,5 @@ def put_chunk(f, share_id, chunk, chunk_data):
     with files_mutexes[f]:
         f.seek(chunk["start"])
         decoded = base64.b64decode(chunk_data)
-        print chunk["part"], chunk["md5"], get_chunk_md5(decoded)
+        # print chunk["part"], chunk["md5"], get_chunk_md5(decoded)
         f.write(decoded)

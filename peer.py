@@ -9,6 +9,9 @@ import registry
 import json
 import utils
 import cmd
+import sys
+import traceback
+from threading import Thread
 
 
 def handle(sock, addr):
@@ -66,12 +69,33 @@ def keepalive_thread():
         time.sleep(20)
         print 'keepalive'
         tracker.send_keepalive()
-        tracker.announce_all_chunks()
+        #tracker.announce_all_chunks()
 
 def state_sync_thread():
     while True:
         time.sleep(10)
         state.sync_to_disk()
+
+def setup_fetch_workers():
+    ret = []
+    def worker():
+        while True:
+            try:
+                f, share, chunk = registry.fetch_queue.get()
+                chunk_data = registry.get_chunk_from_peers(share["id"], chunk["part"])
+                registry.put_chunk(f, share["id"], chunk, chunk_data)
+                tracker.announce_chunk_download(share["id"], chunk["part"])
+            except Exception, e:
+                traceback.print_exc(file=sys.stdout)
+                print e
+            finally:
+                registry.fetch_queue.task_done()
+    for i in range(100):
+        t = Thread(target=worker)
+        t.daemon = True
+        t.start()
+        ret.append(t)
+    return ret
 
 def cli():
     class Cmd(cmd.Cmd):
@@ -108,6 +132,7 @@ def peer(datadir, hostname, port):
     for t in threads:
         t.daemon = True
         t.start()
+    threads.extend(setup_fetch_workers())
     while True:
         for t in threads:
             t.join(600)

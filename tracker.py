@@ -15,6 +15,10 @@ def get_peers_for_chunk(share_id, chunk_id):
     received = sock.recv(1024)
     sock.close()
     data = json.loads(received).get('data')
+    if not data:
+        print share_id, chunk_id
+        print received
+        return data
     data = [x for x in data if x != "{}:{}".format(utils.config['hostname'], utils.config['port'])]
     return data
 
