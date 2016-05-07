@@ -6,7 +6,7 @@ import threading
 import thread
 import tracker
 import state
-import registry
+import shares
 import signal
 import json
 import utils
@@ -20,7 +20,7 @@ from threading import Thread
 def handle(sock, addr):
     try:
         req = json.loads(read_from_sock(sock))
-        resp = registry.get_chunk(req['share_id'], req['chunk_id'])
+        resp = shares.get_chunk(req['share_id'], req['chunk_id'])
         # print "resp len", len(resp)
         print "sent", req
         sock.send(resp)
@@ -67,7 +67,6 @@ class P2PShareServer(object):
             self.sock.close()
 
 def keepalive_thread():
-    print 'inrun'
     while True:
         time.sleep(20)
         print 'keepalive'
@@ -84,19 +83,19 @@ def setup_fetch_workers():
     def worker():
         while True:
             try:
-                f, share, chunk = registry.fetch_queue.get()
-                chunk_data = registry.get_chunk_from_peers(share["id"], chunk["part"])
+                f, share, chunk = shares.fetch_queue.get()
+                chunk_data = shares.get_chunk_from_peers(share["id"], chunk["part"])
                 decoded = base64.b64decode(chunk_data)
-                if chunk["md5"] != registry.get_chunk_md5(decoded):
+                if chunk["md5"] != shares.get_chunk_md5(decoded):
                     print 'Checksum mismatch', chunk['part']
-                    raise registry.ChecksumMismatch
-                registry.put_chunk(f, share["id"], chunk, decoded)
+                    raise shares.ChecksumMismatch
+                shares.put_chunk(f, share["id"], chunk, decoded)
                 tracker.announce_chunk_download(share["id"], chunk["part"])
             except Exception, e:
                 traceback.print_exc(file=sys.stdout)
                 print e
             finally:
-                registry.fetch_queue.task_done()
+                shares.fetch_queue.task_done()
     for i in range(100):
         t = Thread(target=worker)
         t.daemon = True
@@ -109,7 +108,7 @@ def cli():
         def do_get_share(self, args):
             share_id, tpath = args.split()
             if share_id and tpath:
-                registry.get_file(int(share_id), tpath)
+                shares.get_file(int(share_id), tpath)
 
         def do_EOF(self, line):
             "Exit"
