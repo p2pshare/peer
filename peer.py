@@ -1,16 +1,19 @@
 import socket
 import time
+import os
 import click
 import threading
 import thread
 import tracker
 import state
 import registry
+import signal
 import json
 import utils
 import cmd
 import sys
 import traceback
+import base64
 from threading import Thread
 
 
@@ -83,7 +86,11 @@ def setup_fetch_workers():
             try:
                 f, share, chunk = registry.fetch_queue.get()
                 chunk_data = registry.get_chunk_from_peers(share["id"], chunk["part"])
-                registry.put_chunk(f, share["id"], chunk, chunk_data)
+                decoded = base64.b64decode(chunk_data)
+                if chunk["md5"] != registry.get_chunk_md5(decoded):
+                    print 'Checksum mismatch', chunk['part']
+                    raise registry.ChecksumMismatch
+                registry.put_chunk(f, share["id"], chunk, decoded)
                 tracker.announce_chunk_download(share["id"], chunk["part"])
             except Exception, e:
                 traceback.print_exc(file=sys.stdout)
@@ -111,11 +118,19 @@ def cli():
     print
     Cmd().cmdloop()
 
+def signal_handler(signal, frame):
+    print
+    print 'You pressed Ctrl+C!'
+    print 'Syncing to disk'
+    state.sync_to_disk()
+    sys.exit(0)
+
 @click.command()
 @click.argument('datadir')
 @click.argument('hostname')
 @click.argument('port', type=int)
 def peer(datadir, hostname, port):
+    signal.signal(signal.SIGINT, signal_handler)
     utils.config['port'] = port
     utils.config['hostname'] = hostname
     utils.config['datadir'] = datadir

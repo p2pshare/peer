@@ -1,1209 +1,1209 @@
 [
     {
         "hash": "9c943d56c9e7e04234a13a2fb54cde70", 
-        "author": "pdvyas", 
         "trackers": [
             "localhost:9098", 
             "localhost:9099"
         ], 
+        "author": "pdvyas", 
         "filename": "pdvyas.pdf", 
         "chunks": [
             {
-                "size": 512, 
                 "start": 0, 
+                "downloaded": true, 
                 "part": 0, 
                 "md5": "fb8a17794bcdc30d4dc13c79c4efcd47", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 512, 
+                "downloaded": true, 
                 "part": 1, 
                 "md5": "06b78db73d8c0d5ed9dd6e0e16682dfd", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 1024, 
+                "downloaded": true, 
                 "part": 2, 
                 "md5": "89ee3567d212ce120f4ea1bd2f791cba", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 1536, 
+                "downloaded": true, 
                 "part": 3, 
                 "md5": "7d65f1c2da1421a18f6c861367d9a182", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 2048, 
+                "downloaded": true, 
                 "part": 4, 
                 "md5": "4846027bfbe062bf407e257af3126b10", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 2560, 
+                "downloaded": true, 
                 "part": 5, 
                 "md5": "a26cbe75668306611acdd5345e0dc0d5", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 3072, 
+                "downloaded": true, 
                 "part": 6, 
                 "md5": "5a5e4bafd103c9fb3d937adf26306ad0", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 3584, 
+                "downloaded": true, 
                 "part": 7, 
                 "md5": "be11e7b8d3259db815b11a1176bd39e3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 4096, 
+                "downloaded": true, 
                 "part": 8, 
                 "md5": "43a6b7cfa9455308490e9802d7f58ec1", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 4608, 
+                "downloaded": true, 
                 "part": 9, 
                 "md5": "6f1dff700ed9300ae6ed38512009c963", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 5120, 
+                "downloaded": true, 
                 "part": 10, 
                 "md5": "60cd35d4c9a0c6d17d53f265580a6618", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 5632, 
+                "downloaded": true, 
                 "part": 11, 
                 "md5": "9234c94e7cb8ce67cf7d096d7c609159", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 6144, 
+                "downloaded": true, 
                 "part": 12, 
                 "md5": "c12a9b3fe95de2095a52fad3ee40213e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 6656, 
+                "downloaded": true, 
                 "part": 13, 
                 "md5": "75a4e11263739ed8743c68069379e0ad", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 7168, 
+                "downloaded": true, 
                 "part": 14, 
                 "md5": "34af93b0119cd916bd5b94278d22ac50", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 7680, 
+                "downloaded": true, 
                 "part": 15, 
                 "md5": "a42bc145790560cbb2ede620083b2ea1", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 8192, 
+                "downloaded": true, 
                 "part": 16, 
                 "md5": "d5c3b28eb28e4d0d941cb654aa94b693", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 8704, 
+                "downloaded": true, 
                 "part": 17, 
                 "md5": "dd1814386469ea18b996b7675d884728", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 9216, 
+                "downloaded": true, 
                 "part": 18, 
                 "md5": "b5ba9912b7ec18ea2bdd13315ef2c110", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 9728, 
+                "downloaded": true, 
                 "part": 19, 
                 "md5": "30aa89a10b8d2d9868ce1cd8f25a6f30", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 10240, 
+                "downloaded": true, 
                 "part": 20, 
                 "md5": "80f96f8fe07fe680b2353692e20c0269", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 10752, 
+                "downloaded": true, 
                 "part": 21, 
                 "md5": "300509e6da60ce984b7417bb552c76d3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 11264, 
+                "downloaded": true, 
                 "part": 22, 
                 "md5": "cb4cf27d19da004a3039175364f4bcfc", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 11776, 
+                "downloaded": true, 
                 "part": 23, 
                 "md5": "4e68204716df4d1b8f8540f90daf00a6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 12288, 
+                "downloaded": true, 
                 "part": 24, 
                 "md5": "31d8f1efe8c7749ffa94125e32316cde", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 12800, 
+                "downloaded": true, 
                 "part": 25, 
                 "md5": "8620ec37f1c21eacf5a4c95f0f8b5892", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 13312, 
+                "downloaded": true, 
                 "part": 26, 
                 "md5": "44e6f2387b4b039c878118119c70fc9a", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 13824, 
+                "downloaded": true, 
                 "part": 27, 
                 "md5": "d0cf3485e14402def9de01bbd2d9bd34", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 14336, 
+                "downloaded": true, 
                 "part": 28, 
                 "md5": "1c87590745aaf775fe149bf99edc2de8", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 14848, 
+                "downloaded": true, 
                 "part": 29, 
                 "md5": "ce751ed2e22f8f61bc20c703a215cdbb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 15360, 
+                "downloaded": true, 
                 "part": 30, 
                 "md5": "a7aed0d3a788c94598cf6f60be283e36", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 15872, 
+                "downloaded": true, 
                 "part": 31, 
                 "md5": "9803c2af53dc796e8a0e7150fb8a6e3e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 16384, 
+                "downloaded": true, 
                 "part": 32, 
                 "md5": "76387701b5592969fe66b4a742b42af4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 16896, 
+                "downloaded": true, 
                 "part": 33, 
                 "md5": "1cd751c891742c2817beabf55937d7ba", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 17408, 
+                "downloaded": true, 
                 "part": 34, 
                 "md5": "933fafab79d2bd8c411d7bccf9135593", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 17920, 
+                "downloaded": true, 
                 "part": 35, 
                 "md5": "191f3c8b23f4d22edf413fd3d3b0dc97", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 18432, 
+                "downloaded": true, 
                 "part": 36, 
                 "md5": "1b35bd971856ba415fa4b08c9906ac62", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 18944, 
+                "downloaded": true, 
                 "part": 37, 
                 "md5": "161137ac1091cdadd72364a8e5b4f982", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 19456, 
+                "downloaded": true, 
                 "part": 38, 
                 "md5": "23171a85943e5304ab71502b7962ccc0", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 19968, 
+                "downloaded": true, 
                 "part": 39, 
                 "md5": "a3131f5b57d8146341dc18261eeda5cb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 20480, 
+                "downloaded": true, 
                 "part": 40, 
                 "md5": "74211bcc86f04d8483f29b6e751e8ded", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 20992, 
+                "downloaded": true, 
                 "part": 41, 
                 "md5": "94355a7060567977401d5b3239b17be4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 21504, 
+                "downloaded": true, 
                 "part": 42, 
                 "md5": "9e2787b52a8b6636f74a68d1dc4861a6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 22016, 
+                "downloaded": true, 
                 "part": 43, 
                 "md5": "f216cf33099fd99d4c6a6ed42395b948", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 22528, 
+                "downloaded": true, 
                 "part": 44, 
                 "md5": "849fb4b2b68843409cb17adddac8913f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 23040, 
+                "downloaded": true, 
                 "part": 45, 
                 "md5": "56f4dbf23e9fedc3eb0a1d5793bed689", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 23552, 
+                "downloaded": true, 
                 "part": 46, 
                 "md5": "a6f6a14326b8a9443a3c1dcb713d8996", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 24064, 
+                "downloaded": true, 
                 "part": 47, 
                 "md5": "8e5fc061667a0b0cf8fb819058ba0bfa", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 24576, 
+                "downloaded": true, 
                 "part": 48, 
                 "md5": "ff1fd1e48381c30cc2fd867c58a05145", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 25088, 
+                "downloaded": true, 
                 "part": 49, 
                 "md5": "45cbec0313efff622432fe013d0dc26e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 25600, 
+                "downloaded": true, 
                 "part": 50, 
                 "md5": "2c933f654f74d5224391e60f59366bf4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 26112, 
+                "downloaded": true, 
                 "part": 51, 
                 "md5": "2dd262ed66ae94720876f8c714b25555", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 26624, 
+                "downloaded": true, 
                 "part": 52, 
                 "md5": "f8d352d7472020b64e310292d7992417", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 27136, 
+                "downloaded": true, 
                 "part": 53, 
                 "md5": "b4fc4ed64f2ce5ff207dc53f6859d911", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 27648, 
+                "downloaded": true, 
                 "part": 54, 
                 "md5": "a65d0cf7d24e3301de955f607098cc8a", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 28160, 
+                "downloaded": true, 
                 "part": 55, 
                 "md5": "6e47677f7e55f8a1321cac05ea433f6a", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 28672, 
+                "downloaded": true, 
                 "part": 56, 
                 "md5": "ce52f2e0a5d906dce0b590df4ec6142f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 29184, 
+                "downloaded": true, 
                 "part": 57, 
                 "md5": "e7bcc771e6bec2598ea40b6242ef1a33", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 29696, 
+                "downloaded": true, 
                 "part": 58, 
                 "md5": "e200c0e175223c895d221882e93b67d0", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 30208, 
+                "downloaded": true, 
                 "part": 59, 
                 "md5": "ed2f7497aa79c45f1465b6239b5c70a3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 30720, 
+                "downloaded": true, 
                 "part": 60, 
                 "md5": "1217721ebd725eee0ff58f33536ac946", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 31232, 
+                "downloaded": true, 
                 "part": 61, 
                 "md5": "45189c160da7f127a2b1a9faadc8545f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 31744, 
+                "downloaded": true, 
                 "part": 62, 
                 "md5": "4fec36318e29a45a0d439a8b86de7414", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 32256, 
+                "downloaded": true, 
                 "part": 63, 
                 "md5": "d5a3f102f2dc704a446d5fb30e8b55a4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 32768, 
+                "downloaded": true, 
                 "part": 64, 
                 "md5": "44ed6b848162cc5a2193996a067ba1bb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 33280, 
+                "downloaded": true, 
                 "part": 65, 
                 "md5": "fc75d23e87a552b05e730fac19067dbc", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 33792, 
+                "downloaded": true, 
                 "part": 66, 
                 "md5": "41b00f8d70444e9665047d7362c78828", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 34304, 
+                "downloaded": true, 
                 "part": 67, 
                 "md5": "910875029e0df8f9cd8eba94bf8e0fe6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 34816, 
+                "downloaded": true, 
                 "part": 68, 
                 "md5": "c662d2270483abcee92073f789b6ddfb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 35328, 
+                "downloaded": true, 
                 "part": 69, 
                 "md5": "c8235da27e01b7c1be8434d1ff8889e6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 35840, 
+                "downloaded": true, 
                 "part": 70, 
                 "md5": "f94f0003447f4ae68f0bbf817178f4b7", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 36352, 
+                "downloaded": true, 
                 "part": 71, 
                 "md5": "c4760b1d850cd7533074ade939126945", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 36864, 
+                "downloaded": true, 
                 "part": 72, 
                 "md5": "a6a2c01b2cea7816c0f2e51d98b8231e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 37376, 
+                "downloaded": true, 
                 "part": 73, 
                 "md5": "d4fecf716d77f771c619031ca94ddcf3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 37888, 
+                "downloaded": true, 
                 "part": 74, 
                 "md5": "b9f2d5111229e7d3d63f7f7e9cde0885", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 38400, 
+                "downloaded": true, 
                 "part": 75, 
                 "md5": "f46db4b63de2c1b58fed1ef56bf1b9b5", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 38912, 
+                "downloaded": true, 
                 "part": 76, 
                 "md5": "0b08eafb0ac2ff68b67c08c1e6687115", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 39424, 
+                "downloaded": true, 
                 "part": 77, 
                 "md5": "9678ab2252ad981243bf2849a43fe756", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 39936, 
+                "downloaded": true, 
                 "part": 78, 
                 "md5": "efd9661ad5cb639b79fbbd55ea30e41f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 40448, 
+                "downloaded": true, 
                 "part": 79, 
                 "md5": "fe5e12711f3f46a3c1ba8ff3dc773300", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 40960, 
+                "downloaded": true, 
                 "part": 80, 
                 "md5": "37678799c75015d30f371fe2deb72ba6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 41472, 
+                "downloaded": true, 
                 "part": 81, 
                 "md5": "4dcc0b7020e9d7a2fe52ad2d79b727f9", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 41984, 
+                "downloaded": true, 
                 "part": 82, 
                 "md5": "b376df7cae6aa61537229c0689eb2b1e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 42496, 
+                "downloaded": true, 
                 "part": 83, 
                 "md5": "2ef5db26fe2d1dd93a07f4c08a9b77ed", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 43008, 
+                "downloaded": true, 
                 "part": 84, 
                 "md5": "3dee41e9e7e5e600062036eb264a0521", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 43520, 
+                "downloaded": true, 
                 "part": 85, 
                 "md5": "da9ade50219ee1945020a5af4ac847db", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 44032, 
+                "downloaded": true, 
                 "part": 86, 
                 "md5": "84bc2d50fa2a7d63e4fd29467a8a3eda", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 44544, 
+                "downloaded": true, 
                 "part": 87, 
                 "md5": "565805bf057d136161ae89c0c530ae8b", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 45056, 
+                "downloaded": true, 
                 "part": 88, 
                 "md5": "eaa659b5c5542e5586f7d884d4594096", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 45568, 
+                "downloaded": true, 
                 "part": 89, 
                 "md5": "d357285c976b4809995d72949e47d756", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 46080, 
+                "downloaded": true, 
                 "part": 90, 
                 "md5": "16e122fc2fc9c8d497f01d9d8aa538d2", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 46592, 
+                "downloaded": true, 
                 "part": 91, 
                 "md5": "5a81b6a10b34c36cf9a481230bc74785", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 47104, 
+                "downloaded": true, 
                 "part": 92, 
                 "md5": "877816d55b22403eaa8d813871b512b6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 47616, 
+                "downloaded": true, 
                 "part": 93, 
                 "md5": "21983db47289fa506c0c7636b3ff4a7e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 48128, 
+                "downloaded": true, 
                 "part": 94, 
                 "md5": "5697b74bfe8babd4935081cdf6881536", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 48640, 
+                "downloaded": true, 
                 "part": 95, 
                 "md5": "8f36697ca5471c1184a56fb64afc3137", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 49152, 
+                "downloaded": true, 
                 "part": 96, 
                 "md5": "3a92e00932740e3adeda5f9169c72738", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 49664, 
+                "downloaded": true, 
                 "part": 97, 
                 "md5": "5ed886d7c63b5014bb43f11ae2afb670", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 50176, 
+                "downloaded": true, 
                 "part": 98, 
                 "md5": "afab19984c096f8b302fc64a5fa62b0c", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 50688, 
+                "downloaded": true, 
                 "part": 99, 
                 "md5": "a77478cccbf565ec046aaf79f00de176", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 51200, 
+                "downloaded": true, 
                 "part": 100, 
                 "md5": "62fc2a54f1c8bd8d0bbcf47ee05f65be", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 51712, 
+                "downloaded": true, 
                 "part": 101, 
                 "md5": "74b29d9b98793a782acdeea898e42f05", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 52224, 
+                "downloaded": true, 
                 "part": 102, 
                 "md5": "528d8dea4cf0e4580903f64f8b5baa47", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 52736, 
+                "downloaded": true, 
                 "part": 103, 
                 "md5": "176bd92f823ba07cd12321019aeabb0f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 53248, 
+                "downloaded": true, 
                 "part": 104, 
                 "md5": "b844dd51b39f54304054fc25708c02f3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 53760, 
+                "downloaded": true, 
                 "part": 105, 
                 "md5": "f78554944b442ad9f008318d88aef6aa", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 54272, 
+                "downloaded": true, 
                 "part": 106, 
                 "md5": "d052b826a760db04433b8c2b4a86c74f", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 54784, 
+                "downloaded": true, 
                 "part": 107, 
                 "md5": "b1f3e15ca458e93bbddf4a7492272a83", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 55296, 
+                "downloaded": true, 
                 "part": 108, 
                 "md5": "66c0b4106dd938e1676c2e4c908905c1", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 55808, 
+                "downloaded": true, 
                 "part": 109, 
                 "md5": "d3a449a16728310c02c75873cb48389e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 56320, 
+                "downloaded": true, 
                 "part": 110, 
                 "md5": "c699e0e8cf542bde6fb22afc0c19099c", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 56832, 
+                "downloaded": true, 
                 "part": 111, 
                 "md5": "1089afafb683d95f5ebaa40009890184", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 57344, 
+                "downloaded": true, 
                 "part": 112, 
                 "md5": "2f6586d113f6f529ce22330079be8cc6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 57856, 
+                "downloaded": true, 
                 "part": 113, 
                 "md5": "084acfbcea53fc497b2d20a65c2197ec", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 58368, 
+                "downloaded": true, 
                 "part": 114, 
                 "md5": "c616cd4a4f1e460a8fda75d251169ad0", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 58880, 
+                "downloaded": true, 
                 "part": 115, 
                 "md5": "9899806e72eaa73c3ae32577f1d3179b", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 59392, 
+                "downloaded": true, 
                 "part": 116, 
                 "md5": "50e7cd58151302a3eb0c8ebd43d15122", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 59904, 
+                "downloaded": true, 
                 "part": 117, 
                 "md5": "dabf698b05db1007fe34426d4c57acb3", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 60416, 
+                "downloaded": true, 
                 "part": 118, 
                 "md5": "300412a0d4c3941a766aef61e15bf33e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 60928, 
+                "downloaded": true, 
                 "part": 119, 
                 "md5": "b80fea7b531150057e705ae55557b173", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 61440, 
+                "downloaded": true, 
                 "part": 120, 
                 "md5": "bceb5953b74d611c5798dd1290876860", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 61952, 
+                "downloaded": true, 
                 "part": 121, 
                 "md5": "029032ba8527b7b2588e229a39b6acc8", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 62464, 
+                "downloaded": true, 
                 "part": 122, 
                 "md5": "075bb3d62540c06e0de95abca54c5761", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 62976, 
+                "downloaded": true, 
                 "part": 123, 
                 "md5": "13a18007205c457ccb90ca48a9c0241b", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 63488, 
+                "downloaded": true, 
                 "part": 124, 
                 "md5": "0d95db615496fd18963c11a0f2571cf6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 64000, 
+                "downloaded": true, 
                 "part": 125, 
                 "md5": "61c44480e24004239b32fb668fce5a56", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 64512, 
+                "downloaded": true, 
                 "part": 126, 
                 "md5": "90b47e197ff2233081938cd1095c8545", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 65024, 
+                "downloaded": true, 
                 "part": 127, 
                 "md5": "418778f1dab48df5857909756e0d79f4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 65536, 
+                "downloaded": true, 
                 "part": 128, 
                 "md5": "4eff0543b45c1d9faa8026430436f686", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 66048, 
+                "downloaded": true, 
                 "part": 129, 
                 "md5": "cc3bb4bd7f516bc4b1fbac9d0eaf5a2e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 66560, 
+                "downloaded": true, 
                 "part": 130, 
                 "md5": "6dd90c4ea3151f1b17da3f967fdc9b94", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 67072, 
+                "downloaded": true, 
                 "part": 131, 
                 "md5": "92e2fc8229ab9701691468881d4a8415", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 67584, 
+                "downloaded": true, 
                 "part": 132, 
                 "md5": "f8dc2732f93426dae566f1160c6cffd2", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 68096, 
+                "downloaded": true, 
                 "part": 133, 
                 "md5": "56cf7812b6306412844a1ad4c794de33", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 68608, 
+                "downloaded": true, 
                 "part": 134, 
                 "md5": "6a8631f3a7d1fa41fb8655e47ffed4ed", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 69120, 
+                "downloaded": true, 
                 "part": 135, 
                 "md5": "3be38aab3048d159a163e3c4cc5be8e5", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 69632, 
+                "downloaded": true, 
                 "part": 136, 
                 "md5": "38a25daeafee9b6f5e90fbe3e0ecbeb4", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 70144, 
+                "downloaded": true, 
                 "part": 137, 
                 "md5": "7599d87467eb93d67bedd2b9613142c9", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 70656, 
+                "downloaded": true, 
                 "part": 138, 
                 "md5": "89399c71014f263c7093ffb65d182114", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 71168, 
+                "downloaded": true, 
                 "part": 139, 
                 "md5": "1de3e3abadd18489283f5f1730f6c319", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 71680, 
+                "downloaded": true, 
                 "part": 140, 
                 "md5": "ad3ae697943e7ae477a757f7564c47bc", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 72192, 
+                "downloaded": true, 
                 "part": 141, 
                 "md5": "3f38310da75074200322e9fdeea225ec", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 72704, 
+                "downloaded": true, 
                 "part": 142, 
                 "md5": "1ce68e09eae08a96ea2305b1483eb493", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 73216, 
+                "downloaded": true, 
                 "part": 143, 
                 "md5": "79042a88b15a75f390d162ef1f5f1779", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 73728, 
+                "downloaded": true, 
                 "part": 144, 
                 "md5": "d892d76370fef08c046e134e2c702525", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 74240, 
+                "downloaded": true, 
                 "part": 145, 
                 "md5": "a2faaf5d53717133cc439b0125dbbe62", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 74752, 
+                "downloaded": true, 
                 "part": 146, 
                 "md5": "0157b15c20cafb7b41f24051b6f4e995", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 75264, 
+                "downloaded": true, 
                 "part": 147, 
                 "md5": "60b7539805766eeee1339315ad1aead1", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 75776, 
+                "downloaded": true, 
                 "part": 148, 
                 "md5": "0fd967be63e036630de010d53c6a4c68", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 76288, 
+                "downloaded": true, 
                 "part": 149, 
                 "md5": "918b21768ceafa7cd33396ef4cd75d18", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 76800, 
+                "downloaded": true, 
                 "part": 150, 
                 "md5": "85241b6bb76028f5b1424f5ef967edc8", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 77312, 
+                "downloaded": true, 
                 "part": 151, 
                 "md5": "565fbf697797f0d961d4b2963c791c78", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 77824, 
+                "downloaded": true, 
                 "part": 152, 
                 "md5": "01ba81c9e62856795bf983123c612b1a", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 78336, 
+                "downloaded": true, 
                 "part": 153, 
                 "md5": "01550c39610fc49dd6dd40fb5f46ddcd", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 78848, 
+                "downloaded": true, 
                 "part": 154, 
                 "md5": "f0096eb31dfa0da5271765fcb58871e6", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 79360, 
+                "downloaded": true, 
                 "part": 155, 
                 "md5": "25d2e199902a59eae1af778dab535dfb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 79872, 
+                "downloaded": true, 
                 "part": 156, 
                 "md5": "7fb9575b8ca7e7275db8f9a3d1d090fb", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 80384, 
+                "downloaded": true, 
                 "part": 157, 
                 "md5": "fd2efaf33665f73fee205817b0eb59ab", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 80896, 
+                "downloaded": true, 
                 "part": 158, 
                 "md5": "6fb052df92d1bab50b1a9f0aa41a2ae9", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 81408, 
+                "downloaded": true, 
                 "part": 159, 
                 "md5": "55da667950a8d43f198864d37f2eb2b9", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 81920, 
+                "downloaded": true, 
                 "part": 160, 
                 "md5": "6f3b65c06cd5b6ceed2e9016cfaa4b54", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 82432, 
+                "downloaded": true, 
                 "part": 161, 
                 "md5": "baa9636d2424cce33ba07946e3a19098", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 82944, 
+                "downloaded": true, 
                 "part": 162, 
                 "md5": "3bafa3d9ab6fb1fe0fbb2b48de824e8b", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 83456, 
+                "downloaded": true, 
                 "part": 163, 
                 "md5": "b7bd82338133f524b4ad6a2d190e3b65", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 83968, 
+                "downloaded": true, 
                 "part": 164, 
                 "md5": "2dbc7722d6a00408cf31cd44fa161598", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 84480, 
+                "downloaded": true, 
                 "part": 165, 
                 "md5": "8f9e2a1f35976bda5fefc3eb2f5ccc8a", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 84992, 
+                "downloaded": true, 
                 "part": 166, 
                 "md5": "44aeb5615014cb5b78be56cf2249a138", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 85504, 
+                "downloaded": true, 
                 "part": 167, 
                 "md5": "6feaded9ca732d3206c9cbe4a1955b31", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 86016, 
+                "downloaded": true, 
                 "part": 168, 
                 "md5": "0c08c70a809daaab59732ff61d8a272e", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 512, 
                 "start": 86528, 
+                "downloaded": true, 
                 "part": 169, 
                 "md5": "322f7ec44c1a9d6e8bea90f3729aeb67", 
-                "downloaded": true
+                "size": 512
             }, 
             {
-                "size": 28, 
                 "start": 87040, 
+                "downloaded": true, 
                 "part": 170, 
                 "md5": "41a2e8118b72b987c78bf32b662e6468", 
-                "downloaded": true
+                "size": 28
             }
         ], 
         "tpath": "pdvyas.pdf", 

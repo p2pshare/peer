@@ -21,6 +21,9 @@ fetch_queue = Queue.Queue()
 class ChunkNotFound(Exception):
     pass
 
+class ChecksumMismatch(Exception):
+    pass
+
 def get_p2pshare_metadata(path):
     filehash, chunks = get_hashes(path)
     filename = os.path.basename(path)
@@ -71,16 +74,17 @@ def get_file(share_id, fpath):
     state.add_share(share, fpath)
     create_sparse_file(share["size"], fpath)
     chunks = share["chunks"]
-    # shuffle(chunks)
     with open(fpath, "wb") as f:
-        # XXX Do this in a multithreaded way
         if f not in files_mutexes:
             files_mutexes[f] = threading.Lock()
         for chunk in chunks:
             fetch_queue.put((f, share, chunk))
         fetch_queue.join()
-        state.sync_to_disk()
         del files_mutexes[f]
+    if share["hash"] != get_file_checksum(fpath):
+        print "File  checksum mismatch"
+        raise ChecksumMismatch
+    state.sync_to_disk()
 
 def get_share(share_id):
     # XXX Make a request to registry
@@ -129,6 +133,14 @@ def _get_chunk(share, chunk):
 def put_chunk(f, share_id, chunk, chunk_data):
     with files_mutexes[f]:
         f.seek(chunk["start"])
-        decoded = base64.b64decode(chunk_data)
-        # print chunk["part"], chunk["md5"], get_chunk_md5(decoded)
-        f.write(decoded)
+        f.write(chunk_data)
+
+def get_file_checksum(path):
+    filehash = hashlib.md5()
+    with open(path, 'rb') as f:
+        while True:
+            chunk = f.read(CHUNK_SIZE)
+            if not chunk:
+                break
+            filehash.update(chunk)
+    return filehash.hexdigest()
