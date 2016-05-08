@@ -15,3 +15,22 @@ def create_sparse_file(size, fpath):
 
 def get_config():
     return config
+
+def recvall(sock):
+    data = ""
+    part = None
+    while part != "":
+        part = sock.recv(4096)
+        data += part
+        if len(part) < 4096:
+            break
+    return data
+
+def sendall(sock, msg):
+    MSGLEN=4096
+    totalsent = 0
+    while totalsent < MSGLEN:
+        sent = sock.send(msg[totalsent:])
+        if sent == 0:
+            raise RuntimeError("socket connection broken")
+        totalsent = totalsent + sent

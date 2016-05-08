@@ -1,6 +1,5 @@
 import hashlib
 from pprint import pprint
-import getpass
 import os
 import random
 import threading
@@ -11,10 +10,12 @@ import json
 import Queue
 
 from random import shuffle
-from tracker import get_peers_for_chunk, announce_chunk_download
-from utils import create_sparse_file
+from tracker import get_peers_for_chunk, announce_chunk_download, announce_chunks_for_share
+from utils import create_sparse_file, recvall
+from registry import get_share
+from registry import add_share as _add_share
 
-CHUNK_SIZE = 512# * 1024 # 512K
+CHUNK_SIZE = 512 * 1024 # 512K
 
 fetch_queue = Queue.Queue()
 
@@ -24,53 +25,17 @@ class ChunkNotFound(Exception):
 class ChecksumMismatch(Exception):
     pass
 
-def get_p2pshare_metadata(path):
-    filehash, chunks = get_hashes(path)
-    filename = os.path.basename(path)
-    return {
-        "id": 1,
-        "author": getpass.getuser(),
-        "chunks": chunks,
-        "size": os.stat(path).st_size,
-        "hash": filehash,
-        "filename": filename,
-        "trackers": [
-            "localhost:9098",
-            "localhost:9099"
-        ]
-    }
-
-
-def get_hashes(path):
-    filehash = hashlib.md5()
-    chunks = []
-    count = 0
-    with open(path, 'rb') as f:
-        while True:
-            start = f.tell()
-            chunk = f.read(CHUNK_SIZE)
-            if not chunk:
-                break
-            md5 = get_chunk_md5(chunk)
-            filehash.update(chunk)
-            size = f.tell() - start
-            chunks.append({
-                'part': count,
-                'start': start,
-                'part': count,
-                'md5': md5,
-                'size': size
-            })
-            count += 1
-    return filehash.hexdigest(), chunks
-
-def get_chunk_md5(data):
-    return hashlib.md5(data).hexdigest()
-
 files_mutexes = {}
 
-def get_file(share_id, fpath):
+def add_share(path):
+    share = _add_share(path)
+    print 'added to registry', share["id"]
+    state.set_share_downloaded(share)
+    announce_chunks_for_share(share)
+
+def get_file(share_id):
     share = get_share(share_id)
+    fpath = share['filename']
     state.add_share(share, fpath)
     create_sparse_file(share["size"], fpath)
     chunks = share["chunks"]
@@ -86,18 +51,8 @@ def get_file(share_id, fpath):
         raise ChecksumMismatch
     state.sync_to_disk()
 
-def get_share(share_id):
-    # XXX Make a request to registry
-    with open('/Users/pdvyas/shares.json', 'r') as f:
-        return json.load(f)[0]
-
 def get_chunk_from_peers(share_id, chunk_id):
     peer = random.choice(get_peers_for_chunk(share_id, chunk_id))
-    if not peer:
-        print 'retrying'
-        peer = random.choice(get_peers_for_chunk(share_id, chunk_id))
-    if not peer:
-        print 'give up'
     return get_chunk_from_peer(peer, share_id, chunk_id)
 
 def get_chunk_from_peer(peer, share_id, chunk_id):
@@ -109,8 +64,7 @@ def get_chunk_from_peer(peer, share_id, chunk_id):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((host, port))
     s.send(json.dumps({"share_id": share_id, "chunk_id": chunk_id}))
-    # XXX read more than 4096
-    buff = s.recv(4096)
+    buff = recvall(s)
     s.close()
     return buff
 
@@ -123,7 +77,6 @@ def get_chunk(share_id, chunk_id):
     return _get_chunk(share, chunk)
 
 def _get_chunk(share, chunk):
-    print "in _get_chunk", chunk
     with open(share["filename"], 'rb') as f:
         f.seek(chunk["start"])
         chunk_data = f.read(chunk["size"])

@@ -32,8 +32,11 @@ def announce_chunk_download(share_id, chunk_id):
 
 def announce_all_chunks():
     for _, share in state.shares.items():
-        for chunk in share['chunks']:
-            announce_chunk_download(share['id'], chunk['part'])
+        announce_chunks_for_share(share)
+
+def announce_chunks_for_share(share):
+    for chunk in share['chunks']:
+        announce_chunk_download(share['id'], chunk['part'])
 
 def send_keepalive():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

@@ -20,17 +20,23 @@ def update_chunk_download(share_id, chunk_id):
     shares[share_id]['chunks'][chunk_id]['downloaded'] = True
 
 def setup(datadir):
-    global chunks
-    global shares
     ret = []
     os.chdir(datadir)
     downloaded_shares = get_downloaded_shares()
     for share in downloaded_shares:
-        shares[share['id']] = share
-        for chunk in chunks:
-            if chunk.get('downloaded') == True:
-                ret.append((share['id']), chunk['part'])
-            chunks = set(ret)
+        ret.extend(set_share_downloaded(share))
+    return ret
+
+def set_share_downloaded(share):
+    global chunks
+    global shares
+    ret = []
+    shares[share['id']] = share
+    for chunk in chunks:
+        if chunk.get('downloaded') == True:
+            ret.append((share['id']), chunk['part'])
+        chunks = set(ret)
+    return ret
 
 def add_share(share, fpath):
     global shares

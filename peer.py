@@ -8,6 +8,7 @@ import tracker
 import state
 import shares
 import signal
+import registry
 import json
 import utils
 import cmd
@@ -16,34 +17,23 @@ import traceback
 import base64
 from threading import Thread
 
+m = threading.Lock()
 
 def handle(sock, addr):
     try:
-        req = json.loads(read_from_sock(sock))
+        req = json.loads(utils.recvall(sock))
+        m.acquire()
         resp = shares.get_chunk(req['share_id'], req['chunk_id'])
+        m.release()
         # print "resp len", len(resp)
-        print "sent", req
-        sock.send(resp)
+        print "sent", (req['share_id'], req['chunk_id'])
+        utils.sendall(sock, resp)
     except Exception, e:
         msg = "ERROR"
         print e
-        sock.send(msg)
+        sock.sendall(msg)
     finally:
         sock.close()
-
-def read_from_sock(sock):
-    buffer_max_len = 4096
-    buffer = sock.recv(4096)
-    if len(buffer) <= buffer_max_len:
-        return buffer
-    buffering = True
-    while buffering:
-        more = sock.recv(4096)
-        if not more:
-            buffering = False
-        else:
-            buffer += more
-    return buffer
 
 class P2PShareServer(object):
 
@@ -86,9 +76,10 @@ def setup_fetch_workers():
                 f, share, chunk = shares.fetch_queue.get()
                 chunk_data = shares.get_chunk_from_peers(share["id"], chunk["part"])
                 decoded = base64.b64decode(chunk_data)
-                if chunk["md5"] != shares.get_chunk_md5(decoded):
-                    print 'Checksum mismatch', chunk['part']
-                    raise shares.ChecksumMismatch
+                # print chunk["part"], decoded
+                # if chunk["md5"] != registry.get_chunk_md5(decoded):
+                #     print 'Checksum mismatch', chunk['part']
+                #     raise shares.ChecksumMismatch
                 shares.put_chunk(f, share["id"], chunk, decoded)
                 tracker.announce_chunk_download(share["id"], chunk["part"])
             except Exception, e:
@@ -96,7 +87,7 @@ def setup_fetch_workers():
                 print e
             finally:
                 shares.fetch_queue.task_done()
-    for i in range(100):
+    for i in range(1):
         t = Thread(target=worker)
         t.daemon = True
         t.start()
@@ -105,10 +96,14 @@ def setup_fetch_workers():
 
 def cli():
     class Cmd(cmd.Cmd):
-        def do_get_share(self, args):
-            share_id, tpath = args.split()
-            if share_id and tpath:
-                shares.get_file(int(share_id), tpath)
+        def do_get(self, args):
+            share_id = int(args.strip())
+            if share_id:
+                shares.get_file(share_id)
+
+        def do_add(self, args):
+            if args:
+                shares.add_share(args)
 
         def do_EOF(self, line):
             "Exit"
