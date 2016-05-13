@@ -16,8 +16,10 @@ def get_downloaded_shares():
 
 def update_chunk_download(share_id, chunk_id):
     global shares
+    sync_mutex.acquire()
     chunks.add((share_id, chunk_id))
     shares[share_id]['chunks'][chunk_id]['downloaded'] = True
+    sync_mutex.release()
 
 def setup(datadir):
     ret = []

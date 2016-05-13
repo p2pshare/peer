@@ -15,7 +15,7 @@ from utils import create_sparse_file, recvall
 from registry import get_share
 from registry import add_share as _add_share
 
-CHUNK_SIZE = 512 * 1024 # 512K
+CHUNK_SIZE = 256 * 1024 # 512K
 
 fetch_queue = Queue.Queue()
 
@@ -47,7 +47,7 @@ def get_file(share_id):
         fetch_queue.join()
         del files_mutexes[f]
     if share["hash"] != get_file_checksum(fpath):
-        print "File  checksum mismatch"
+        print "File checksum mismatch"
         raise ChecksumMismatch
     state.sync_to_disk()
 

@@ -81,8 +81,3 @@ def get_hashes(path):
 
 def get_chunk_md5(data):
     return hashlib.md5(data).hexdigest()
-
-if __name__ == "__main__":
-    # print add_share("p1/pdvyas.pdf")
-    import pprint
-    pprint.pprint(get_share(22))

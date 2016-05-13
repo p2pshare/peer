@@ -17,21 +17,20 @@ import traceback
 import base64
 from threading import Thread
 
-m = threading.Lock()
+NUM_THREADS = 20
 
 def handle(sock, addr):
     try:
         req = json.loads(utils.recvall(sock))
-        m.acquire()
         resp = shares.get_chunk(req['share_id'], req['chunk_id'])
-        m.release()
-        # print "resp len", len(resp)
         print "sent", (req['share_id'], req['chunk_id'])
         utils.sendall(sock, resp)
     except Exception, e:
-        msg = "ERROR"
-        print e
-        sock.sendall(msg)
+        if not e.message == "socket connection broken":
+            msg = "ERROR"
+            print e.message
+            print e.__class__
+            sock.sendall(msg)
     finally:
         sock.close()
 
@@ -58,10 +57,10 @@ class P2PShareServer(object):
 
 def keepalive_thread():
     while True:
-        time.sleep(20)
+        time.sleep(30)
         print 'keepalive'
         tracker.send_keepalive()
-        #tracker.announce_all_chunks()
+        tracker.announce_all_chunks()
 
 def state_sync_thread():
     while True:
@@ -76,10 +75,9 @@ def setup_fetch_workers():
                 f, share, chunk = shares.fetch_queue.get()
                 chunk_data = shares.get_chunk_from_peers(share["id"], chunk["part"])
                 decoded = base64.b64decode(chunk_data)
-                # print chunk["part"], decoded
-                # if chunk["md5"] != registry.get_chunk_md5(decoded):
-                #     print 'Checksum mismatch', chunk['part']
-                #     raise shares.ChecksumMismatch
+                if chunk["md5"] != registry.get_chunk_md5(decoded):
+                    print 'Checksum mismatch', chunk['part']
+                    raise shares.ChecksumMismatch
                 shares.put_chunk(f, share["id"], chunk, decoded)
                 tracker.announce_chunk_download(share["id"], chunk["part"])
             except Exception, e:
@@ -87,7 +85,7 @@ def setup_fetch_workers():
                 print e
             finally:
                 shares.fetch_queue.task_done()
-    for i in range(1):
+    for i in range(NUM_THREADS):
         t = Thread(target=worker)
         t.daemon = True
         t.start()
